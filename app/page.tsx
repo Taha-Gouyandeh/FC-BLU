@@ -245,7 +245,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Knockout Stage */}
+        {/* Knockout Stage
         <div className="mb-8">
           <div className="text-center mb-8">
             <h2 className="text-slate-800 mb-2">
@@ -260,10 +260,10 @@ export default function Home() {
             groupBTeams={tournamentData.groupB}
             knockoutData={knockoutData}
           />
-        </div>
+        </div> */}
 
         {/* Legend */}
-        <div className="mt-8 bg-white rounded-xl shadow-lg p-6 max-w-3xl mx-auto">
+        {/* <div className="mt-8 bg-white rounded-xl shadow-lg p-6 max-w-3xl mx-auto">
           <h3 className="text-slate-800 mb-4">Table Legend</h3>
           <div className="grid sm:grid-cols-2 gap-4">
             <div className="space-y-2">
@@ -311,32 +311,8 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
-        {/* Instructions */}
-        <div className="mt-8 bg-blue-50 border border-blue-200 rounded-xl p-6 max-w-3xl mx-auto">
-          <h3 className="text-blue-800 mb-2">
-            How to Edit Data
-          </h3>
-          <p className="text-blue-700 mb-3">
-            To modify team statistics, edit the{" "}
-            <code className="bg-blue-100 px-2 py-1 rounded">
-              initialTournamentData
-            </code>{" "}
-            object in the App.tsx file. The tables will
-            automatically update and re-sort based on your
-            changes.
-          </p>
-          <p className="text-blue-700">
-            To modify knockout match results, edit the scores in
-            the{" "}
-            <code className="bg-blue-100 px-2 py-1 rounded">
-              initialKnockoutData
-            </code>{" "}
-            object. Winners are calculated automatically based
-            on the scores you set.
-          </p>
-        </div>
       </div>
     </div>
   );
