@@ -245,7 +245,7 @@ export default function Home() {
           </div>
         </div>
 
-        {Knockout Stage
+        {/* Knockout Stage
         <div className="mb-8">
           <div className="text-center mb-8">
             <h2 className="text-slate-800 mb-2">
@@ -260,10 +260,10 @@ export default function Home() {
             groupBTeams={tournamentData.groupB}
             knockoutData={knockoutData}
           />
-        </div> }
+        </div> */}
 
         {/* Legend */}
-        { <div className="mt-8 bg-white rounded-xl shadow-lg p-6 max-w-3xl mx-auto">
+        {/* <div className="mt-8 bg-white rounded-xl shadow-lg p-6 max-w-3xl mx-auto">
           <h3 className="text-slate-800 mb-4">Table Legend</h3>
           <div className="grid sm:grid-cols-2 gap-4">
             <div className="space-y-2">
@@ -311,7 +311,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </div> }
+        </div> */}
 
       </div>
     </div>
