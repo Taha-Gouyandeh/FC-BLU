@@ -245,8 +245,8 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Knockout Stage
-        <div className="mb-8">
+        {/* Knockout Stage */}
+        { <div className="mb-8">
           <div className="text-center mb-8">
             <h2 className="text-slate-800 mb-2">
               Knockout Stage
@@ -260,58 +260,7 @@ export default function Home() {
             groupBTeams={tournamentData.groupB}
             knockoutData={knockoutData}
           />
-        </div> */}
-
-        {/* Legend */}
-        {/* <div className="mt-8 bg-white rounded-xl shadow-lg p-6 max-w-3xl mx-auto">
-          <h3 className="text-slate-800 mb-4">Table Legend</h3>
-          <div className="grid sm:grid-cols-2 gap-4">
-            <div className="space-y-2">
-              <div className="flex items-center gap-2">
-                <span className="text-slate-600">MP:</span>
-                <span className="text-slate-800">
-                  Matches Played
-                </span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="text-slate-600">W:</span>
-                <span className="text-slate-800">Wins</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="text-slate-600">D:</span>
-                <span className="text-slate-800">Draws</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="text-slate-600">L:</span>
-                <span className="text-slate-800">Losses</span>
-              </div>
-            </div>
-            <div className="space-y-2">
-              <div className="flex items-center gap-2">
-                <span className="text-slate-600">GS:</span>
-                <span className="text-slate-800">
-                  Goals Scored
-                </span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="text-slate-600">GC:</span>
-                <span className="text-slate-800">
-                  Goals Conceded
-                </span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="text-slate-600">GD:</span>
-                <span className="text-slate-800">
-                  Goal Difference
-                </span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="text-slate-600">Pts:</span>
-                <span className="text-slate-800">Points</span>
-              </div>
-            </div>
-          </div>
-        </div> */}
+        </div> }
 
       </div>
     </div>
