@@ -152,53 +152,53 @@ const initialKnockoutData = {
       id: "qf1",
       team1: null,
       team2: null,
-      score1: 2,
-      score2: 1,
+      score1: 0,
+      score2: 0,
     }, // 1st Group A vs 4th Group B
     {
       id: "qf2",
       team1: null,
       team2: null,
-      score1: 3,
-      score2: 1,
-    }, // 1st Group B vs 4th Group A
+      score1: 0,
+      score2: 0,
+    }, // 2nd Group B vs 3rd Group A
     {
       id: "qf3",
       team1: null,
       team2: null,
-      score1: 1,
+      score1: 0,
       score2: 0,
     }, // 2nd Group A vs 3rd Group B
     {
       id: "qf4",
       team1: null,
       team2: null,
-      score1: 2,
-      score2: 2,
-    }, // 2nd Group B vs 3rd Group A (penalties: team1 wins)
+      score1: 0,
+      score2: 0,
+    }, // 1st Group B vs 4th Group A    
   ],
   semiFinals: [
     {
       id: "sf1",
       team1: null,
       team2: null,
-      score1: 2,
-      score2: 1,
-    }, // Winner QF1 vs Winner QF3
+      score1: 0,
+      score2: 0,
+    }, // Winner QF1 vs Winner QF2
     {
       id: "sf2",
       team1: null,
       team2: null,
       score1: 1,
       score2: 0,
-    }, // Winner QF2 vs Winner QF4
+    }, // Winner QF3 vs Winner QF4
   ],
   final: {
     id: "f",
     team1: null,
     team2: null,
-    score1: 3,
-    score2: 2,
+    score1: 0,
+    score2: 0,
   }, // Winner SF1 vs Winner SF2
 };
 
