@@ -120,7 +120,6 @@ export function KnockoutBracket({ groupATeams, groupBTeams, knockoutData }: Knoc
     ...(final && { final }),
     ...(champion && { champion }),
     };
-    
   }, [qualifiedTeams, knockoutData]);
 
   return (
@@ -141,7 +140,7 @@ export function KnockoutBracket({ groupATeams, groupBTeams, knockoutData }: Knoc
           <div className="flex-1">
             <h3 className="text-center mb-6 text-slate-700">Semi Finals</h3>
             <div className="space-y-8" style={{ marginTop: '58px' }}>
-              {matches.sf.map((match, index) => (
+              {matches.sf && matches.sf.map((match, index) => (
                 <div key={match.id} style={{ marginBottom: index === 0 ? '160px' : '0' }}>
                   <MatchCard match={match} showConnector={index === 0} />
                 </div>
@@ -153,23 +152,31 @@ export function KnockoutBracket({ groupATeams, groupBTeams, knockoutData }: Knoc
           <div className="flex-1">
             <h3 className="text-center mb-6 text-slate-700">Final</h3>
             <div style={{ marginTop: '186px' }}>
+              {matches.final && (
               <MatchCard match={matches.final} showConnector={false} />
+            )}
             </div>
           </div>
 
           {/* Champion */}
           <div className="flex-1">
             <h3 className="text-center mb-6 text-slate-700">Champion</h3>
-            <div style={{ marginTop: '186px' }}>
-              <div className="bg-gradient-to-br from-yellow-50 to-amber-50 border-2 border-yellow-400 rounded-lg p-4 shadow-md">
-                <div className="flex items-center justify-center gap-2 mb-2">
-                  <Trophy className="w-6 h-6 text-yellow-600" />
-                  <span className="text-yellow-700">Winner</span>
-                </div>
-                <div className="text-center text-slate-900">
-                  {matches.champion || 'TBD'}
-                </div>
-              </div>
+            <div style={{ marginTop: '186px' }}>              
+              {matches.champion && (
+                <>
+                  <div className="bg-gradient-to-br from-yellow-50 to-amber-50 border-2 border-yellow-400 rounded-lg p-4 shadow-md">
+
+                    <div className="flex items-center justify-center gap-2 mb-2">
+                      <Trophy className="w-6 h-6 text-yellow-600" />
+                      <span className="text-yellow-700">Winner</span>
+                    </div>
+
+                    <div className="text-center text-slate-900">
+                      {matches.champion}
+                    </div>
+                  </div>
+                </>
+              )}              
             </div>
           </div>
         </div>
@@ -234,6 +241,7 @@ function MatchCard({ match, showConnector }: MatchCardProps) {
       </div>
 
       {/* Connector line to next round */}      
+      
     </div>
   );
 }
