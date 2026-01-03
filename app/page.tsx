@@ -189,7 +189,7 @@ const initialKnockoutData = {
       id: "sf2",
       team1: null,
       team2: null,
-      score1: 1,
+      score1: 0,
       score2: 0,
     }, // Winner QF3 vs Winner QF4
   ],

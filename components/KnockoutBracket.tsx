@@ -60,9 +60,9 @@ export function KnockoutBracket({ groupATeams, groupBTeams, knockoutData }: Knoc
     // Quarter Finals matchups (cross-group)
     const qf = [
       { ...knockoutData.quarterFinals[0], team1: groupA[0]?.team, team2: groupB[3]?.team },
-      { ...knockoutData.quarterFinals[1], team1: groupB[0]?.team, team2: groupA[3]?.team },
+      { ...knockoutData.quarterFinals[1], team1: groupA[2]?.team, team2: groupB[1]?.team },
       { ...knockoutData.quarterFinals[2], team1: groupA[1]?.team, team2: groupB[2]?.team },
-      { ...knockoutData.quarterFinals[3], team1: groupB[1]?.team, team2: groupA[2]?.team }
+      { ...knockoutData.quarterFinals[3], team1: groupB[0]?.team, team2: groupA[3]?.team }
     ];
 
     // Determine QF winners
@@ -70,27 +70,57 @@ export function KnockoutBracket({ groupATeams, groupBTeams, knockoutData }: Knoc
       if (match.score1 === null || match.score2 === null) return null;
       if (match.score1 > match.score2) return match.team1;
       if (match.score2 > match.score1) return match.team2;
-      // If scores are equal, team1 wins (could represent penalties)
-      return match.team1;
+      
+      return null;
     };
 
     // Semi Finals
-    const sf = [
-      { ...knockoutData.semiFinals[0], team1: getWinner(qf[0]), team2: getWinner(qf[2]) },
-      { ...knockoutData.semiFinals[1], team1: getWinner(qf[1]), team2: getWinner(qf[3]) }
-    ];
+    /*const sf = [
+      { ...knockoutData.semiFinals[0], team1: getWinner(qf[0]), team2: getWinner(qf[1]) },
+      { ...knockoutData.semiFinals[1], team1: getWinner(qf[2]), team2: getWinner(qf[3]) }
+    ];*/
+    const sf =
+    getWinner(qf[0]) && getWinner(qf[1]) && getWinner(qf[2]) && getWinner(qf[3])
+    ? [
+        {
+          ...knockoutData.semiFinals[0],
+          team1: getWinner(qf[0]),
+          team2: getWinner(qf[1]),
+        },
+        {
+          ...knockoutData.semiFinals[1],
+          team1: getWinner(qf[2]),
+          team2: getWinner(qf[3]),
+        },
+      ]
+    : null;
 
     // Final
-    const final = {
+    /*const final = {
       ...knockoutData.final,
       team1: getWinner(sf[0]),
       team2: getWinner(sf[1])
-    };
+    };*/
+    const final =
+    sf && getWinner(sf[0]) && getWinner(sf[1])
+    ? {
+        ...knockoutData.final,
+        team1: getWinner(sf[0]),
+        team2: getWinner(sf[1]),
+      }
+    : null;
 
     // Champion
-    const champion = getWinner(final);
-
-    return { qf, sf, final, champion };
+    //const champion = getWinner(final);
+    const champion = final ? getWinner(final) : null;
+    
+    return {
+    qf,
+    ...(sf && { sf }),
+    ...(final && { final }),
+    ...(champion && { champion }),
+    };
+    
   }, [qualifiedTeams, knockoutData]);
 
   return (
@@ -203,10 +233,7 @@ function MatchCard({ match, showConnector }: MatchCardProps) {
         </div>
       </div>
 
-      {/* Connector line to next round */}
-      {showConnector && (
-        <div className="absolute left-full top-1/2 w-4 h-0.5 bg-slate-300" style={{ transform: 'translateY(-50%)' }}></div>
-      )}
+      {/* Connector line to next round */}      
     </div>
   );
 }
