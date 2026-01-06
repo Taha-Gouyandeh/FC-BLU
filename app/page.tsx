@@ -173,8 +173,8 @@ const initialKnockoutData = {
       id: "qf4",
       team1: null,
       team2: null,
-      score1: 0,
-      score2: 0,
+      score1: 16,
+      score2: 3,
     }, // 1st Group B vs 4th Group A    
   ],
   semiFinals: [
